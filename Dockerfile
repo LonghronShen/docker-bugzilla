@@ -38,7 +38,7 @@ RUN rm -f /etc/msmtprc
 RUN /usr/bin/perl install-module.pl Email::Send && \
     /usr/bin/perl install-module.pl File::Spec
 RUN ./install-module.pl --all
-#RUN ./checksetup.pl
+RUN ./checksetup.pl
 
 # Enable CGI and Disable default apache site
 RUN a2enmod cgi headers expires && a2ensite bugzilla && a2dissite 000-default
